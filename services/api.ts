@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import {IProduct} from "@types";
+
 import productList from "./productsMock";
 const BASE_URL = "http://simpleapistore.vercel.app/api";
 
@@ -7,26 +9,48 @@ const requester = axios.create({
   baseURL: BASE_URL,
 });
 
-export async function getProducts() {
+/* 
+export const getProducts = async () => {
   try {
     const res = await requester.get("/products");
 
-    return res;
+    return res.data;
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-export async function getProductById(id: number) {
+export const getProductById = async (id: number) => {
   try {
     const res = await requester.get(`/products/${id}`);
 
-    return res;
+    return res.data;
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 export function getMock() {
   return productList;
 }
+ */
+export const api = {
+  getProducts: async () => {
+    try {
+      const res = await requester.get("/products");
+
+      return res.data;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  getProductById: async (id: number) => {
+    try {
+      const res = await requester.get(`/products/${id}`);
+
+      return res.data;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+};

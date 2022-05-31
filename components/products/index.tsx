@@ -26,13 +26,13 @@ const Products: React.FC = () => {
       </Select>
       <Stack direction="row">
         <Button bg="gray.300">
-          <Text bgClip="text" bgGradient="linear(to-r, #5B86E5, #36D1DC)">
+          <Text bgClip="text" color="#5B86E5">
             Lowest Price
           </Text>
         </Button>
         <Button bg="gray.300">
           {" "}
-          <Text bgClip="text" bgGradient="linear(to-r, #5B86E5, #36D1DC)">
+          <Text bgClip="text" color="#5B86E5">
             Highest Price
           </Text>
         </Button>
