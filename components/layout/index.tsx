@@ -1,4 +1,4 @@
-import {VStack, Flex} from "@chakra-ui/react";
+import {Flex, Stack} from "@chakra-ui/react";
 
 import Navbar from "@components/navbar";
 import LayoutHead, {LayoutHeadProps} from "@components/layout/LayoutHead";
@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const {headProps, children} = props;
 
   return (
-    <VStack maxW="container.xl">
+    <Stack align="center" w="full">
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Navbar />
 
       {/* Main Content */}
-      <Flex flexDir="column" width="full">
+      <Flex direction="column" maxW="container.xl" width="full">
         {children}
       </Flex>
 
@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
       {/* Footer */}
       <Footer />
-    </VStack>
+    </Stack>
   );
 };
 

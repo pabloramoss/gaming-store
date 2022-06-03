@@ -1,24 +1,22 @@
 import {GetStaticPaths, GetStaticProps} from "next";
-import {useRouter} from "next/router";
 import {Stack} from "@chakra-ui/react";
 
 import {api} from "@services/api";
-import {IProduct} from "@types";
-import ProductCard from "@components/products/ProductCard";
+import {Product} from "types/Product";
 import ProductDetail from "@components/products/ProductDetail";
 import BuyCard from "@components/products/BuyCard";
+import ProductCart from "@components/ProductCart";
 
 interface ProductProps {
-  product: IProduct;
+  product: Product;
 }
 
 const ProductItem: React.FC<ProductProps> = ({product}) => {
-  console.log(product);
-
   return (
     <Stack direction={{base: "column", lg: "row"}} m={30}>
       <ProductDetail product={product} />
-      <BuyCard />
+      <BuyCard product={product} />
+      <ProductCart />
     </Stack>
   );
 };

@@ -1,9 +1,9 @@
 import {Stack, Image, Heading, Text, Flex} from "@chakra-ui/react";
 
-import {IProduct} from "@types";
+import {Product} from "types/Product";
 
 interface ProductDetailProps {
-  product: IProduct;
+  product: Product;
 }
 
 const ProductDetail: React.FC<ProductDetailProps> = ({product}) => {

@@ -1,22 +1,37 @@
-import {Stack, Heading, Select, Button, Wrap, Text} from "@chakra-ui/react";
+import {Button, Heading, Select, Stack, Text, Wrap} from "@chakra-ui/react";
+import {useState} from "react";
 
-import productList from "@services/productsMock";
-import {IProduct} from "@types";
+import {useAppDispatch, useAppSelector} from "@redux/hooks";
+import {Product} from "types/Product";
+import {sortedAscendingProducts, sortedDescendingProducts} from "@redux/features/productSlice";
 
 import ProductCard from "./ProductCard";
 
 const Products: React.FC = () => {
-  const categories = ["Keyboard", "Mouse", "Mic", "Monitor", "Webcam"];
+  const products = useAppSelector((state) => state.products.productList);
+  const categories = ["keyboard", "microphone", "monitor", "mouse", "webcam"];
+  const [currentCategory, setCurrentCategory] = useState("");
+  const filterProducts =
+    currentCategory === ""
+      ? products
+      : products.filter((product) => product.category === currentCategory);
+  const dispatch = useAppDispatch();
+
+  const handleAscending = () => {
+    dispatch(sortedAscendingProducts);
+    console.log("hola");
+  };
 
   return (
-    <Stack>
+    <Stack align="center">
       <Heading>GAMING PRODUCTS</Heading>
       <Select
         isRequired
         bg="white"
+        maxW="250px"
         mt={10}
-        /* onChange={(e)=>setCategory(e.target.value)}  */
         placeholder="Todos los productos"
+        onChange={(e) => setCurrentCategory(e.target.value)}
       >
         {categories.map((category) => (
           <option key={category} value={category}>
@@ -25,20 +40,20 @@ const Products: React.FC = () => {
         ))}
       </Select>
       <Stack direction="row">
-        <Button bg="gray.300">
+        <Button bg="gray.300" onClick={handleAscending}>
           <Text bgClip="text" color="#5B86E5">
             Lowest Price
           </Text>
         </Button>
-        <Button bg="gray.300">
+        <Button bg="gray.300" onClick={() => dispatch(sortedDescendingProducts)}>
           {" "}
           <Text bgClip="text" color="#5B86E5">
             Highest Price
           </Text>
         </Button>
       </Stack>
-      <Wrap spacing={4}>
-        {productList.map((product: IProduct) => (
+      <Wrap justify="center" spacing={4}>
+        {filterProducts.map((product: Product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Wrap>

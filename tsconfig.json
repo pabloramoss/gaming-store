@@ -4,8 +4,9 @@
     "paths": {
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
-      "@types": ["types"],
+      "@types/*": ["types/*"],
       "@services/*": ["services/*"],
+      "@redux/*": ["redux/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

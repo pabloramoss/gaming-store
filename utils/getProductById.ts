@@ -1,8 +1,8 @@
-import {IProduct} from "@types";
+import {Product} from "types/Product";
 import productList from "@services/productsMock";
 
 const getProductById = (id: string) => {
-  const productById: IProduct | undefined = productList.find((product) => product.id === id);
+  const productById: Product | undefined = productList.find((product) => product.id === id);
 
   return productById;
 };

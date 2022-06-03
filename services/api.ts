@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import {IProduct} from "@types";
+import {Product} from "types/Product";
 
 import productList from "./productsMock";
 const BASE_URL = "http://simpleapistore.vercel.app/api";
