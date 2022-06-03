@@ -4,6 +4,7 @@ import {useState} from "react";
 import {useAppDispatch, useAppSelector} from "@redux/hooks";
 import {Product} from "types/Product";
 import {sortedAscendingProducts, sortedDescendingProducts} from "@redux/features/productSlice";
+import {useGetProductsQuery} from "@redux/features/products/productsApiSlice";
 
 import ProductCard from "./ProductCard";
 
@@ -11,6 +12,7 @@ const Products: React.FC = () => {
   const products = useAppSelector((state) => state.products.productList);
   const categories = ["keyboard", "microphone", "monitor", "mouse", "webcam"];
   const [currentCategory, setCurrentCategory] = useState("");
+  const {data = [], isFetching} = useGetProductsQuery();
   const filterProducts =
     currentCategory === ""
       ? products
@@ -19,11 +21,12 @@ const Products: React.FC = () => {
 
   const handleAscending = () => {
     dispatch(sortedAscendingProducts);
-    console.log("hola");
+    console.log("esta es la data", data);
   };
 
   return (
     <Stack align="center">
+      <Button onClick={() => console.log(data)}>data</Button>
       <Heading>GAMING PRODUCTS</Heading>
       <Select
         isRequired
