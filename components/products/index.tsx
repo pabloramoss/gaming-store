@@ -7,22 +7,49 @@ import {sortedAscendingProducts, sortedDescendingProducts} from "@redux/features
 import {useGetProductsQuery} from "@redux/features/products/productsApiSlice";
 
 import ProductCard from "./ProductCard";
+import ProductsList from "./ProductsList";
+import Pagination from "./Pagination";
 
 const Products: React.FC = () => {
   const products = useAppSelector((state) => state.products.productList);
   const categories = ["keyboard", "microphone", "monitor", "mouse", "webcam"];
   const [currentCategory, setCurrentCategory] = useState("");
   const {data = [], isFetching} = useGetProductsQuery();
-  const filterProducts =
-    currentCategory === ""
-      ? products
-      : products.filter((product) => product.category === currentCategory);
+
   const dispatch = useAppDispatch();
 
   const handleAscending = () => {
     dispatch(sortedAscendingProducts);
     console.log("esta es la data", data);
   };
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 10;
+
+  const currentProductsPagination = (
+    products: Product[],
+    currentPage: number,
+    productsPerPage: number,
+  ) => {
+    const indexLastProduct = currentPage * productsPerPage;
+    const indexFirstProduct = indexLastProduct - productsPerPage;
+    const currentProducts = products.slice(indexFirstProduct, indexLastProduct);
+
+    return currentProducts;
+  };
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const filterProducts =
+    currentCategory === ""
+      ? currentProductsPagination(products, currentPage, productsPerPage)
+      : currentProductsPagination(
+          products.filter((product) => product.category === currentCategory),
+          currentPage,
+          productsPerPage,
+        );
 
   return (
     <Stack align="center">
@@ -55,11 +82,21 @@ const Products: React.FC = () => {
           </Text>
         </Button>
       </Stack>
-      <Wrap justify="center" spacing={4}>
-        {filterProducts.map((product: Product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </Wrap>
+      <Pagination
+        currentCategory={currentCategory}
+        currentPage={currentPage}
+        paginate={paginate}
+        productsPerPage={productsPerPage}
+        totalProducts={products.length}
+      />
+      <ProductsList products={filterProducts} />
+      <Pagination
+        currentCategory={currentCategory}
+        currentPage={currentPage}
+        paginate={paginate}
+        productsPerPage={productsPerPage}
+        totalProducts={products.length}
+      />
     </Stack>
   );
 };
