@@ -8,9 +8,6 @@ const Hero: React.FC = () => {
     <Center flexDirection={{base: "column", lg: "row"}} gap={60}>
       <Stack>
         <TextSection />
-        <Button _hover={{bg: "gray.500"}} bgGradient="linear(to-r, #5B86E5, #36D1DC)" color="white">
-          View all products
-        </Button>
       </Stack>
       <Illustration />
     </Center>
