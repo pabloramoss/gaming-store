@@ -3,11 +3,16 @@ import {Product} from "types/Product";
 type SortType = "ascending" | "descending";
 
 export const sortProducts = (sortType: SortType, products: Product[]) => {
-  const sortAscending = products.sort((a: Product, b: Product) => a.price - b.price);
+  const items = [...products];
 
-  if (sortType === "ascending") {
-    return sortAscending;
-  } else {
-    return sortAscending.reverse();
+  switch (sortType) {
+    case "ascending":
+      const sortAscending = items.sort((a: Product, b: Product) => a.price - b.price);
+
+      return sortAscending;
+    case "descending":
+      const sortDescending = items.sort((a: Product, b: Product) => b.price - a.price);
+
+      return sortDescending;
   }
 };

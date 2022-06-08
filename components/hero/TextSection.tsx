@@ -16,7 +16,7 @@ const TextSection: React.FC = () => {
         </Text>
       </Heading>
       <Text color="gray.500" fontSize="lg" fontWeight={600}>
-        E-commerce for gaming products
+        Gaming products store
       </Text>
     </Stack>
   );

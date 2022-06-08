@@ -26,8 +26,8 @@ const Home: NextPage<Props> = ({products}) => {
     <Layout
       headProps={{
         title: "Home | Gaming Zone",
-        description: "E-commerce for gaming products",
-        url: "https://gamingzonestore.vercel.app",
+        description: "Gaming products store",
+        url: "https://gaming-zone.vercel.app",
       }}
     >
       <Hero />

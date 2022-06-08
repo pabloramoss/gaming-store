@@ -6,7 +6,7 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://simpleapistore.vercel.app/api",
-    mode: "cors",
+    mode: "no-cors",
   }),
   endpoints(builder) {
     return {
