@@ -12,7 +12,7 @@ interface ProductsListProps {
 const ProductsList: React.FC<ProductsListProps> = ({products}) => {
   return (
     <AnimatePresence>
-      <Wrap justify="center" spacing={4}>
+      <Wrap id="products" justify="center" spacing={4}>
         {products.map((product: Product) => (
           <ProductCard key={product.id} product={product} />
         ))}

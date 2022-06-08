@@ -6,11 +6,11 @@ const TextSection: React.FC = () => {
       <Heading
         bgClip="text"
         bgGradient="linear(to-r, #5B86E5, #36D1DC)"
-        fontSize={70}
+        fontSize={90}
         fontWeight={800}
         textAlign="center"
       >
-        GAMING{" "}
+        GAMING
         <Text color="gray.800" fontWeight={800}>
           ZONE
         </Text>
