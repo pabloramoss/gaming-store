@@ -21,7 +21,7 @@ const Categories: React.FC<CategoriesProps> = ({setCurrentCategory}) => {
       bg="white"
       maxW="250px"
       mt={10}
-      placeholder="Todos los productos"
+      placeholder="All products"
       onChange={handleChangeCategory}
     >
       {categories.map((category) => (
