@@ -1,10 +1,14 @@
-import {Button, Container, Heading, Stack} from "@chakra-ui/react";
+import {Button, Heading, Stack, Text} from "@chakra-ui/react";
 import {FaCartPlus, FaUser} from "react-icons/fa";
 import Link from "next/link";
 
+import {useAppSelector} from "@redux/hooks";
+
 const Navbar: React.FC = () => {
+  const cart = useAppSelector((state) => state.products.cart);
+
   return (
-    <Stack align="center" bg="white" direction="row" height="4vh" justify="center" width="100vw">
+    <Stack align="center" bg="gray.50" direction="row" height="4vh" justify="center" width="100vw">
       <Stack direction="row" justify="space-between" maxW="container.lg" w="100%">
         <Link href="/">
           <a>
@@ -16,6 +20,21 @@ const Navbar: React.FC = () => {
             <a>
               <Button size="sm">
                 <FaCartPlus height={20} width={20} />
+                {cart.length ? (
+                  <Text
+                    bg="red.400"
+                    color="white"
+                    position="absolute"
+                    px={1}
+                    right={0}
+                    rounded="full"
+                    top={0}
+                  >
+                    {cart.length}
+                  </Text>
+                ) : (
+                  ""
+                )}
               </Button>
             </a>
           </Link>

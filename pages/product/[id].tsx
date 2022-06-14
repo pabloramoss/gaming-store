@@ -5,7 +5,6 @@ import {api} from "@services/api";
 import {Product} from "types/Product";
 import ProductDetail from "@components/products/ProductDetail";
 import BuyCard from "@components/products/BuyCard";
-import ProductCart from "@components/ProductCart";
 
 interface ProductProps {
   product: Product;
@@ -16,7 +15,6 @@ const ProductItem: React.FC<ProductProps> = ({product}) => {
     <Stack direction={{base: "column", lg: "row"}} m={30}>
       <ProductDetail product={product} />
       <BuyCard product={product} />
-      <ProductCart />
     </Stack>
   );
 };
