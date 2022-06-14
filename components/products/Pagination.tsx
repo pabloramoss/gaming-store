@@ -31,7 +31,8 @@ const Pagination: React.FC<PaginationProps> = ({
       {pageNumbers.map((page) => (
         <Button
           key={page}
-          bg={currentPage === page ? "cyan.600" : "gray.400"}
+          bg={currentPage === page ? "#5B86E5" : "gray.300"}
+          color={currentPage === page ? "white" : "gray.500"}
           isDisabled={currentCategory ? true : false}
           onClick={() => paginate(page)}
         >
