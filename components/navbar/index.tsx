@@ -1,4 +1,4 @@
-import {Button, Heading, Stack, Text} from "@chakra-ui/react";
+import {Heading, Stack, Text} from "@chakra-ui/react";
 import {FaCartPlus, FaUser} from "react-icons/fa";
 import Link from "next/link";
 

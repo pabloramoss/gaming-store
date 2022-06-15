@@ -1,20 +1,22 @@
-import {Stack} from "@chakra-ui/react";
+import {VStack, Stack} from "@chakra-ui/react";
 
-import EmptyCart from "@components/products/EmptyCart";
-import ProductCardCheckout from "@components/products/ProductCardCheckout";
 import {useAppSelector} from "@redux/hooks";
+import Payment from "@components/checkout/Payment";
+import Cart from "@components/checkout/Cart";
 
 const Order: React.FC = () => {
   const cart = useAppSelector((state) => state.products.cart);
+  const isLogin = false;
+
+  !isLogin && <p>Necesitas loguearte</p>;
 
   return (
-    <Stack>
-      {cart.length ? (
-        cart.map((product) => <ProductCardCheckout key={product.id} product={product} />)
-      ) : (
-        <EmptyCart />
-      )}
-    </Stack>
+    <VStack mt={100} width="100vw">
+      <Stack bg="white" gap={10} p={{base: 0, md: 20}}>
+        <Cart />
+        {cart.length ? <Payment /> : ""}
+      </Stack>
+    </VStack>
   );
 };
 

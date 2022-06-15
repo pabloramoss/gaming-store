@@ -1,7 +1,5 @@
-import {Recoverable} from "repl";
-
-import {Button, Stack, Link} from "@chakra-ui/react";
-import React, {useCallback, useEffect} from "react";
+import {Button, Stack} from "@chakra-ui/react";
+import React from "react";
 
 interface PaginationProps {
   productsPerPage: number;

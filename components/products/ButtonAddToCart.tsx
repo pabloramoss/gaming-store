@@ -15,7 +15,11 @@ const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({product}) => {
     dispatch(productAdded(product));
   };
 
-  return <Button onClick={() => handleAddToCart(product)}>Add to cart</Button>;
+  return (
+    <Button bg="gray.300" color="#5B86E5" w="100%" onClick={() => handleAddToCart(product)}>
+      Add to cart
+    </Button>
+  );
 };
 
 export default ButtonAddToCart;

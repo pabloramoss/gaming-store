@@ -5,6 +5,7 @@ import {api} from "@services/api";
 import {Product} from "types/Product";
 import ProductDetail from "@components/products/ProductDetail";
 import BuyCard from "@components/products/BuyCard";
+import Layout from "@components/layout";
 
 interface ProductProps {
   product: Product;
@@ -12,10 +13,12 @@ interface ProductProps {
 
 const ProductItem: React.FC<ProductProps> = ({product}) => {
   return (
-    <Stack direction={{base: "column", lg: "row"}} m={30}>
-      <ProductDetail product={product} />
-      <BuyCard product={product} />
-    </Stack>
+    <Layout>
+      <Stack direction={{base: "column", lg: "row"}} justify="center" mt={200}>
+        <ProductDetail product={product} />
+        <BuyCard product={product} />
+      </Stack>
+    </Layout>
   );
 };
 

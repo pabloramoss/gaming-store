@@ -16,8 +16,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({product}) => {
       maxW="800px"
       rounded={10}
     >
-      <Image alt={product.title} objectFit="scale-down" src={product.image} w={400} />
-      <Stack>
+      <Image alt={product.title} objectFit="scale-down" rounded={10} src={product.image} w={400} />
+      <Stack p={5}>
         <Heading size="md">{product.title}</Heading>
         <Flex>
           <Heading fontWeight={500}>${product.price}</Heading>
@@ -26,7 +26,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({product}) => {
           </Text>
         </Flex>
         <Text fontWeight={500}>Desccription</Text>
-        <Text>{product.description}</Text>
+        <Text fontSize="sm">{product.description}</Text>
       </Stack>
     </Stack>
   );
