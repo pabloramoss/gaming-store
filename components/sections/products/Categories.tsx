@@ -1,7 +1,6 @@
 import {Select} from "@chakra-ui/react";
 
-import {usePagination} from "./index";
-
+import {usePagination} from "@hooks/usePagination";
 interface CategoriesProps {
   setCurrentCategory: (category: string) => void;
 }

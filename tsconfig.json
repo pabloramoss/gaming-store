@@ -7,6 +7,7 @@
       "@types/*": ["types/*"],
       "@services/*": ["services/*"],
       "@redux/*": ["redux/*"],
+      "@hooks/*": ["hooks/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
