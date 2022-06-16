@@ -3,7 +3,7 @@ import type {GetStaticProps, NextPage} from "next";
 import {useEffect} from "react";
 import {Container} from "@chakra-ui/react";
 
-import OfferDay from "@components/sections/offerDay";
+import OfferDay from "@components/sections/carousel";
 import Layout from "@components/layout";
 import Hero from "@components/sections/hero";
 import Products from "@components/sections/products";

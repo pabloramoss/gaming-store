@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const cart = useAppSelector((state) => state.products.cart);
 
   return (
-    <Stack align="center" bg="gray.50" direction="row" height="5vh" justify="center" width="100vw">
+    <Stack align="center" bg="gray.50" direction="row" height="5vh" justify="center" w="100%">
       <Stack
         direction="row"
         justify="space-between"
