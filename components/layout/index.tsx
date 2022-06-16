@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Navbar />
 
       {/* Main Content */}
-      <Flex direction="column" maxW="container.xl" width="full">
+      <Flex direction="column" width="full">
         {children}
       </Flex>
 

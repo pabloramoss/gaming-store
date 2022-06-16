@@ -30,7 +30,7 @@ const BuyCard: React.FC<BuyCardProps> = ({product}) => {
   };
 
   return (
-    <Stack align="center" bg="white" justify="center" maxW="320px" p={5} rounded={10} shadow="md">
+    <Stack align="center" bg="white" justify="center" p={5} rounded={10} shadow="md">
       <Text color="green.500" fontWeight={500}>
         Free shipping
       </Text>

@@ -6,19 +6,15 @@ const Illustration: React.FC = () => {
 
   return (
     <Stack align="center" position="relative">
-      <Image
-        alt="Gaming zone illustration"
-        h={400}
-        src="/images/illustration.png"
-        w={400}
-        zIndex={5}
-      />
+      <Box w={{base: 200, md: 400}} zIndex={5}>
+        <Image alt="Gaming zone illustration" h="100%" src="/images/illustration.png" w="100%" />
+      </Box>
       <MotionBox
         animate={{scale: 1}}
         bgGradient="linear(to-r, #5B86E5, #36D1DC)"
         bottom={0}
         className="illustration"
-        h={300}
+        h={{base: 150, md: 300}}
         initial={{scale: 0}}
         opacity={0.6}
         position="absolute"
@@ -29,7 +25,7 @@ const Illustration: React.FC = () => {
           delay: 0.2,
           duration: 0.3,
         }}
-        w={500}
+        w={{base: 300, md: 500}}
       />
     </Stack>
   );

@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 
 import {useAppSelector} from "@redux/hooks";
 import {Product} from "types/Product";
+import SectionDivider from "@components/commons/SectionDivider";
 
 import ProductsList from "./ProductsList";
 import Pagination from "./Pagination";
@@ -70,7 +71,7 @@ const Products: React.FC = () => {
         );
 
   return (
-    <Stack align="center">
+    <Stack align="center" id="products" mt={100}>
       <Heading>GAMING PRODUCTS</Heading>
       <Categories setCurrentCategory={setCurrentCategory} />
       <Filters />

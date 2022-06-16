@@ -1,7 +1,7 @@
 import {Heading, Stack, Text} from "@chakra-ui/react";
 
-import EmptyCart from "@components/products/EmptyCart";
-import ProductCardCheckout from "@components/products/ProductCardCheckout";
+import EmptyCart from "@components/sections/products/EmptyCart";
+import ProductCardCheckout from "@components/sections/products/ProductCardCheckout";
 import {useAppSelector} from "@redux/hooks";
 
 const Cart: React.FC = () => {

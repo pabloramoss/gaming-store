@@ -3,8 +3,8 @@ import {Stack} from "@chakra-ui/react";
 
 import {api} from "@services/api";
 import {Product} from "types/Product";
-import ProductDetail from "@components/products/ProductDetail";
-import BuyCard from "@components/products/BuyCard";
+import ProductDetail from "@components/sections/products/ProductDetail";
+import BuyCard from "@components/sections/products/BuyCard";
 import Layout from "@components/layout";
 
 interface ProductProps {
@@ -14,7 +14,12 @@ interface ProductProps {
 const ProductItem: React.FC<ProductProps> = ({product}) => {
   return (
     <Layout>
-      <Stack direction={{base: "column", lg: "row"}} justify="center" mt={200}>
+      <Stack
+        direction={{base: "column", lg: "row"}}
+        justify="center"
+        mt={{base: 2, md: 200}}
+        mx={{base: 4, md: 0}}
+      >
         <ProductDetail product={product} />
         <BuyCard product={product} />
       </Stack>

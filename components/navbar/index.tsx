@@ -3,14 +3,20 @@ import {FaCartPlus, FaUser} from "react-icons/fa";
 import Link from "next/link";
 
 import {useAppSelector} from "@redux/hooks";
-import ButtonBase from "@components/commons";
+import ButtonBase from "@components/commons/BtnBase";
 
 const Navbar: React.FC = () => {
   const cart = useAppSelector((state) => state.products.cart);
 
   return (
-    <Stack align="center" bg="gray.50" direction="row" height="4vh" justify="center" width="100vw">
-      <Stack direction="row" justify="space-between" maxW="container.lg" w="100%">
+    <Stack align="center" bg="gray.50" direction="row" height="5vh" justify="center" width="100vw">
+      <Stack
+        direction="row"
+        justify="space-between"
+        maxW="container.lg"
+        mx={{base: 4, md: 0}}
+        w="100%"
+      >
         <Link href="/">
           <a>
             <Heading
@@ -30,7 +36,7 @@ const Navbar: React.FC = () => {
         <Stack direction="row">
           <Link href="/order">
             <a>
-              <ButtonBase size="sm">
+              <ButtonBase size="xs">
                 <FaCartPlus height={20} width={20} />
                 {cart.length ? (
                   <Text
@@ -52,9 +58,9 @@ const Navbar: React.FC = () => {
           </Link>
           <Link href="/login">
             <a>
-              <ButtonBase gap="2" size="sm">
+              <ButtonBase gap="2" size="xs">
                 <FaUser height={20} width={20} />
-                Login in
+                Login
               </ButtonBase>
             </a>
           </Link>

@@ -25,8 +25,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({product}) => {
             30% OFF
           </Text>
         </Flex>
-        <Text fontWeight={500}>Desccription</Text>
-        <Text fontSize="sm">{product.description}</Text>
+        <Stack display={{base: "none", md: "flex"}}>
+          <Text fontWeight={500}>Desccription</Text>
+          <Text fontSize="sm">{product.description}</Text>
+        </Stack>
       </Stack>
     </Stack>
   );

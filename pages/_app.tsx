@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import {store} from "@redux/store";
 
 import theme from "../theme/theme";
+import "styles/globals.css";
 
 const MyApp: React.FC<AppProps> = ({Component, pageProps}) => {
   return (

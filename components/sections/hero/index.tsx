@@ -5,7 +5,7 @@ import TextSection from "./TextSection";
 
 const Hero: React.FC = () => {
   return (
-    <Center flexDirection={{base: "column", lg: "row"}} gap={60}>
+    <Center flexDirection={{base: "column", lg: "row"}} gap={60} h={{base: 500, md: 700}}>
       <Stack>
         <TextSection />
       </Stack>

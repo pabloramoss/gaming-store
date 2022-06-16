@@ -2,6 +2,8 @@ import {Product} from "types/Product";
 
 type SortType = "ascending" | "descending";
 
+//sort products from highest to lowest and viceversa
+
 export const sortProducts = (sortType: SortType, products: Product[]) => {
   const items = [...products];
 

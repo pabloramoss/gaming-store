@@ -1,6 +1,6 @@
 import {Stack, Heading, FormControl, FormLabel, Input} from "@chakra-ui/react";
 
-import ButtonBase from "@components/commons";
+import ButtonBase from "@components/commons/BtnBase";
 
 const Payment: React.FC = () => {
   return (

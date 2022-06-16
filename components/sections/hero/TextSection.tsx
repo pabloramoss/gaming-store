@@ -1,4 +1,4 @@
-import {Heading, Stack, Text, Button} from "@chakra-ui/react";
+import {Heading, Stack, Text, Button, Link} from "@chakra-ui/react";
 import {motion} from "framer-motion";
 
 const TextSection: React.FC = () => {
@@ -21,7 +21,7 @@ const TextSection: React.FC = () => {
         <Heading
           bgClip="text"
           bgGradient="linear(to-r, #5B86E5, #36D1DC)"
-          fontSize={90}
+          fontSize={{base: 60, md: 90}}
           fontWeight={800}
           textAlign="center"
         >
@@ -30,9 +30,16 @@ const TextSection: React.FC = () => {
             ZONE
           </Text>
         </Heading>
-        <Button _hover={{bg: "gray.500"}} bgGradient="linear(to-r, #5B86E5, #36D1DC)" color="white">
-          View all products
-        </Button>
+        <Link _hover={{textDecoration: "none"}} href="#products" scrollBehavior="smooth">
+          <Button
+            _hover={{bg: "gray.500"}}
+            bgGradient="linear(to-r, #5B86E5, #36D1DC)"
+            color="white"
+            width="100%"
+          >
+            View all products
+          </Button>
+        </Link>
       </MotionStack>
       <MotionText
         animate={{opacity: 1}}

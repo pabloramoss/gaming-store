@@ -1,11 +1,12 @@
 import type {GetStaticProps, NextPage} from "next";
 
 import {useEffect} from "react";
-import {Alert, AlertIcon, AlertTitle, AlertDescription} from "@chakra-ui/react";
+import {Container} from "@chakra-ui/react";
 
+import OfferDay from "@components/sections/offerDay";
 import Layout from "@components/layout";
-import Hero from "@components/hero";
-import Products from "@components/products";
+import Hero from "@components/sections/hero";
+import Products from "@components/sections/products";
 import {api} from "@services/api";
 import {Product} from "types/Product";
 import {useAppDispatch} from "@redux/hooks";
@@ -33,6 +34,8 @@ const Home: NextPage<Props> = ({products}) => {
     >
       <UnderConstruction />
       <Hero />
+      <OfferDay />
+      <Container position="relative" />
       <Products />
     </Layout>
   );
