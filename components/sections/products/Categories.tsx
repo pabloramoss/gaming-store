@@ -1,12 +1,16 @@
 import {Select} from "@chakra-ui/react";
 
 import {usePagination} from "@hooks/usePagination";
+import {useAppSelector} from "@redux/hooks";
+import {getCategories} from "@utils/getCategories";
 interface CategoriesProps {
   setCurrentCategory: (category: string) => void;
 }
 
 const Categories: React.FC<CategoriesProps> = ({setCurrentCategory}) => {
-  const categories = ["keyboard", "microphone", "monitor", "mouse", "webcam"];
+  const products = useAppSelector((state) => state.products.productList);
+
+  const categories = getCategories(products);
   const {setCurrentPage} = usePagination();
 
   const handleChangeCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,7 +22,6 @@ const Categories: React.FC<CategoriesProps> = ({setCurrentCategory}) => {
     <Select
       isRequired
       bg="white"
-      maxW="250px"
       mt={10}
       placeholder="All products"
       onChange={handleChangeCategory}

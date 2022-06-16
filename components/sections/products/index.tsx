@@ -29,8 +29,10 @@ const Products: React.FC = () => {
   return (
     <Stack align="center" id="products" mt={100}>
       <Heading>GAMING PRODUCTS</Heading>
-      <Categories setCurrentCategory={setCurrentCategory} />
-      <Filters />
+      <Stack>
+        <Categories setCurrentCategory={setCurrentCategory} />
+        <Filters />
+      </Stack>
       <Pagination
         currentCategory={currentCategory}
         currentPage={currentPage}

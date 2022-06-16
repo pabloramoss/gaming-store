@@ -1,6 +1,6 @@
 import {Stack} from "@chakra-ui/react";
 
-import BtnFilter from "./BtnFilter";
+import BtnFilter from "./buttons/BtnFilter";
 
 const Filters: React.FC = () => {
   return (

@@ -3,7 +3,7 @@ import {AnimatePresence} from "framer-motion";
 
 import {Product} from "../../../types/Product";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "./cards/ProductCard";
 
 interface ProductsListProps {
   products: Product[];

@@ -3,8 +3,8 @@ import {Stack, Image, Text, Box} from "@chakra-ui/react";
 import {useAppSelector} from "@redux/hooks";
 import {Product} from "types/Product";
 
-import ButtonAddToCart from "./ButtonAddToCart";
-import ButtonRemoveFromCart from "./ButtonRemoveFromCart";
+import ButtonAddToCart from "../buttons/ButtonAddToCart";
+import ButtonRemoveFromCart from "../buttons/ButtonRemoveFromCart";
 
 interface ProductCheckoutProps {
   product: Product;

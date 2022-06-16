@@ -4,7 +4,7 @@ import {Stack} from "@chakra-ui/react";
 import {api} from "@services/api";
 import {Product} from "types/Product";
 import ProductDetail from "@components/sections/products/ProductDetail";
-import BuyCard from "@components/sections/products/BuyCard";
+import BuyCard from "@components/sections/products/cards/BuyCard";
 import Layout from "@components/layout";
 
 interface ProductProps {

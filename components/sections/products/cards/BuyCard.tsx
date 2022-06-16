@@ -5,8 +5,8 @@ import {Product} from "types/Product";
 import {useAppDispatch, useAppSelector} from "@redux/hooks";
 import {productAdded} from "@redux/features/productSlice";
 
-import ButtonAddToCart from "./ButtonAddToCart";
-import ButtonRemoveFromCart from "./ButtonRemoveFromCart";
+import ButtonAddToCart from "../buttons/ButtonAddToCart";
+import ButtonRemoveFromCart from "../buttons/ButtonRemoveFromCart";
 interface BuyCardProps {
   product: Product;
 }
