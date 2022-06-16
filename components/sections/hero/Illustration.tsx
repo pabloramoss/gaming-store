@@ -18,7 +18,7 @@ const Illustration: React.FC = () => {
         initial={{scale: 0}}
         opacity={0.6}
         position="absolute"
-        rounded={50}
+        rounded={{base: 10, md: 50}}
         transition={{
           type: "spring",
           stiffness: 80,
