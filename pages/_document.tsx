@@ -11,6 +11,7 @@ export default function Document() {
           rel="preload"
           type="font/woff2"
         />
+        <link href="/favicon.png" rel="shortcut icon" />
       </Head>
       <body style={{backgroundColor: "#E5E5E5", width: "100%", margin: 0, padding: 0}}>
         <Main />
