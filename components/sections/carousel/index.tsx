@@ -4,7 +4,7 @@ import Carousel from "./Carousel";
 
 const Intro: React.FC = () => {
   return (
-    <Stack alignSelf="center" height={500} maxW="container.lg" width="100%">
+    <Stack alignSelf="center" height={500} maxW="container.lg" mt={20} width="100%">
       <Carousel />
     </Stack>
   );
