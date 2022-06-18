@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const {headProps, children} = props;
 
   return (
-    <Stack align="center" w="full">
+    <Stack align="center" minH="100vh" w="full">
       {/* SEO Head */}
       <LayoutHead {...headProps} />
 
