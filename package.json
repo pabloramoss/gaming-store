@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress open"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.1.2",
@@ -14,6 +15,7 @@
     "@emotion/styled": "^11.8.1",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "cypress": "^10.1.0",
     "framer-motion": "^6.3.11",
     "next": "12.1.6",
     "react": "18.1.0",

@@ -42,6 +42,7 @@ const Navbar: React.FC = () => {
                   <Text
                     bg="red.400"
                     color="white"
+                    id="cart-length"
                     position="absolute"
                     px={1}
                     right={0}

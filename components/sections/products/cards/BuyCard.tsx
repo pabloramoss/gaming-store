@@ -42,7 +42,13 @@ const BuyCard: React.FC<BuyCardProps> = ({product}) => {
       ) : (
         <ButtonAddToCart product={product} />
       )}
-      <Button bg="gray.300" color="#5B86E5" w="100%" onClick={() => handleBuyProduct(product)}>
+      <Button
+        bg="gray.300"
+        color="#5B86E5"
+        id="btn-buy"
+        w="100%"
+        onClick={() => handleBuyProduct(product)}
+      >
         Buy now
       </Button>
     </Stack>

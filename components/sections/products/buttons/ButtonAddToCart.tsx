@@ -16,7 +16,13 @@ const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({product}) => {
   };
 
   return (
-    <Button bg="gray.300" color="#5B86E5" w="100%" onClick={() => handleAddToCart(product)}>
+    <Button
+      bg="gray.300"
+      color="#5B86E5"
+      id="btn-add"
+      w="100%"
+      onClick={() => handleAddToCart(product)}
+    >
       Add to cart
     </Button>
   );

@@ -20,6 +20,7 @@ const ButtonRemoveFromCart: React.FC<ButtonAddToCartProps> = ({product}) => {
       bg="gray.300"
       color="#5B86E5"
       fontSize="xs"
+      id="btn-remove"
       onClick={() => handleRemoveFromCart(product)}
     >
       Remove
