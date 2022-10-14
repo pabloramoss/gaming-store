@@ -17,7 +17,7 @@ const Products: React.FC = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [currentCategory]);
+  }, [currentCategory, setCurrentPage]);
 
   const filterProducts =
     currentCategory === ""

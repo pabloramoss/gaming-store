@@ -3,20 +3,14 @@ import {Button, Text} from "@chakra-ui/react";
 import {useAppSelector, useAppDispatch} from "@redux/hooks";
 import {setedProducts} from "@redux/features/productSlice";
 import {sortProducts} from "@utils/sortProducts";
+import {useSortProducts} from "@hooks/useSortProducts";
 
 interface BtnFilterProps {
   sortType: "ascending" | "descending";
 }
 
 const BtnFilter: React.FC<BtnFilterProps> = ({sortType}) => {
-  const products = useAppSelector((state) => state.products.productList);
-  const dispatch = useAppDispatch();
-
-  const handleSort = (sortType: "ascending" | "descending") => {
-    const sortedProducts = sortProducts(sortType, products);
-
-    dispatch(setedProducts(sortedProducts));
-  };
+  const {handleSort} = useSortProducts();
 
   return (
     <Button bg="gray.300" onClick={() => handleSort(sortType)}>
