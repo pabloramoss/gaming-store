@@ -18,6 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const pageNumbers = [];
 
+  // Calculate the number of pages
   if (totalProducts) {
     for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
       pageNumbers.push(i);

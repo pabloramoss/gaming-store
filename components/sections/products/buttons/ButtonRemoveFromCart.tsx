@@ -11,7 +11,7 @@ interface ButtonAddToCartProps {
 const ButtonRemoveFromCart: React.FC<ButtonAddToCartProps> = ({product}) => {
   const dispatch = useAppDispatch();
 
-  const handleRemoveFromCart = (product: Product) => {
+  const handleRemoveFromCart = () => {
     dispatch(productRemoved(product));
   };
 
@@ -21,7 +21,7 @@ const ButtonRemoveFromCart: React.FC<ButtonAddToCartProps> = ({product}) => {
       color="#5B86E5"
       fontSize="xs"
       id="btn-remove"
-      onClick={() => handleRemoveFromCart(product)}
+      onClick={handleRemoveFromCart}
     >
       Remove
     </Button>

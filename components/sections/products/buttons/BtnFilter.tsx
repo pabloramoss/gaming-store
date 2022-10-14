@@ -1,8 +1,5 @@
 import {Button, Text} from "@chakra-ui/react";
 
-import {useAppSelector, useAppDispatch} from "@redux/hooks";
-import {setedProducts} from "@redux/features/productSlice";
-import {sortProducts} from "@utils/sortProducts";
 import {useSortProducts} from "@hooks/useSortProducts";
 
 interface BtnFilterProps {

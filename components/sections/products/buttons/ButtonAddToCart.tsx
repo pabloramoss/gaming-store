@@ -11,18 +11,12 @@ interface ButtonAddToCartProps {
 const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({product}) => {
   const dispatch = useAppDispatch();
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = () => {
     dispatch(productAdded(product));
   };
 
   return (
-    <Button
-      bg="gray.300"
-      color="#5B86E5"
-      id="btn-add"
-      w="100%"
-      onClick={() => handleAddToCart(product)}
-    >
+    <Button bg="gray.300" color="#5B86E5" id="btn-add" w="100%" onClick={handleAddToCart}>
       Add to cart
     </Button>
   );

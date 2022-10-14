@@ -6,6 +6,7 @@ export const useSortProducts = () => {
   const products = useAppSelector((state) => state.products.productList);
   const dispatch = useAppDispatch();
 
+  // Sort products ascending/descending
   const handleSort = (sortType: "ascending" | "descending") => {
     const sortedProducts = sortProducts(sortType, products);
 
