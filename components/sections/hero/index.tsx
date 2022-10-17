@@ -1,4 +1,4 @@
-import {Center, Stack} from "@chakra-ui/react";
+import {Center} from "@chakra-ui/react";
 
 import Illustration from "./Illustration";
 import TextSection from "./TextSection";

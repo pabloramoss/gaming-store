@@ -1,15 +1,8 @@
 import {Text} from "@chakra-ui/react";
+
+import {getRandomDiscount} from "./getRandomDiscount";
 const Discount: React.FC = () => {
-  // Get a random discount number %
-  const discount = () => {
-    const discounts = [5, 10, 15];
-    const randomIndex = Math.floor(Math.random() * discounts.length);
-    const randomDiscount = discounts[randomIndex];
-
-    return randomDiscount;
-  };
-
-  return <Text>{discount()}</Text>;
+  return <Text>{getRandomDiscount()}</Text>;
 };
 
 export default Discount;

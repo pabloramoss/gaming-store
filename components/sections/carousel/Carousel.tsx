@@ -5,15 +5,9 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Navigation} from "swiper";
 import {Image} from "@chakra-ui/react";
 
-export default function App() {
-  const images = [
-    "/images/slider1.jpg",
-    "/images/slider2.jpg",
-    "/images/slider3.jpg",
-    "/images/slider4.jpg",
-    "/images/slider5.jpg",
-  ];
+import {images} from "./images";
 
+export default function App() {
   return (
     <>
       <Swiper
